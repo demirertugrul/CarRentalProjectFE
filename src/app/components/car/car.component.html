@@ -10,15 +10,24 @@
       <th scope="col">Descriptions</th>
     </tr>
   </thead>
-  <tbody *ngFor="let car of cars">
+  <tbody *ngFor="let car of cars; let i = index">
     <tr>
       <th scope="row">{{ car.carId }}</th>
-      <td>{{ car.brandId }}</td>
-      <td>{{ car.colorId }}</td>
+      <td>{{ car.brandName }}</td>
+      <td>{{ car.colorName }}</td>
       <td>{{ car.carName }}</td>
       <td>{{ car.modelYear }}</td>
-      <td>${{ car.dailyPrice }}</td>
+      <td>{{ car.dailyPrice }}</td>
       <td>{{ car.descriptions }}</td>
+      <td>
+        <button
+          routerLink="/cars/details/{{ car.carId }}"
+          title="Show Details"
+          id="btnInfo"
+        >
+          <i class="fas fa-info-circle"></i>
+        </button>
+      </td>
     </tr>
   </tbody>
 </table>

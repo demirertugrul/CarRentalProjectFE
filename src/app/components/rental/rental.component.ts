@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Brand } from 'src/app/models/brand';
 import { Rental } from 'src/app/models/rental';
-import { RentalService } from 'src/app/services/rental.service/rental.service';
+import { RentalService } from 'src/app/services/rental.service';
 
 @Component({
   selector: 'app-rental',
@@ -10,8 +10,7 @@ import { RentalService } from 'src/app/services/rental.service/rental.service';
 })
 export class RentalComponent implements OnInit {
   rentals: Rental[] = [];
-  users: any[] = [];
-  brands: Brand[] = [];
+
   constructor(private rentalService: RentalService) {}
 
   ngOnInit(): void {
@@ -19,23 +18,8 @@ export class RentalComponent implements OnInit {
   }
 
   getRentals() {
-    this.rentalService.getRentals().subscribe((res) => {
-      this.rentals = res.data;
-      this.rentalService.getUsers().subscribe((res) => {
-        this.users = res.data;
-        this.rentalService.getBrands().subscribe((res) => {
-          this.brands = res.data;
-          this.matchTableInfos();
-        });
-      });
+    this.rentalService.getRentals().subscribe((response) => {
+      this.rentals = response.data;
     });
-  }
-
-  matchTableInfos() {
-    for (let i = 0; i < this.rentals.length; i++) {
-      this.rentals[i].brandName = this.brands[i].brandName;
-      this.rentals[i].firstAndLastName =
-        this.users[0].firstName + ' ' + this.users[0].lastName;
-    }
   }
 }

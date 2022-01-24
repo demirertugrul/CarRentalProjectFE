@@ -10,6 +10,9 @@ import { CarComponent } from './components/car/car.component';
 import { RentalComponent } from './components/rental/rental.component';
 import { NaviComponent } from './components/navi/navi.component';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+import { CarImageComponent } from './components/car-image/car-image.component';
+import { CarDetailComponent } from './components/cardetail/cardetail.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +22,9 @@ import { HttpClientModule } from '@angular/common/http';
     CarComponent,
     RentalComponent,
     NaviComponent,
+    HomeComponent,
+    CarImageComponent,
+    CarDetailComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
