@@ -20,6 +20,18 @@ export class RentalComponent implements OnInit {
   getRentals() {
     this.rentalService.getRentals().subscribe((response) => {
       this.rentals = response.data;
+      var result = this.rentals.filter((r) => r.rentDate.toLocaleDateString);
+      console.log(result);
+    });
+  }
+
+  formatDate(rentals: Rental[]) {
+    var startDate = new Date('2015-08-04');
+    var endDate = new Date('2015-08-12');
+
+    var resultProductData = rentals.filter((a) => {
+      var date = new Date(a.rentDate);
+      return date >= startDate && date <= endDate;
     });
   }
 }
