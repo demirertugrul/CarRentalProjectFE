@@ -11,7 +11,7 @@ import { CarImageService } from 'src/app/services/carImage.service';
 })
 export class CarImageComponent implements OnInit {
   carImages: CarImage[] = [];
-  baseUrl = 'https://localhost:44330/Uploads/Images/';
+  baseUrl = 'https://localhost:44379/Uploads/Images/';
   constructor(
     private carImageService: CarImageService,
     private activedRoute: ActivatedRoute
@@ -28,6 +28,7 @@ export class CarImageComponent implements OnInit {
   getCarImagesByCarId(carId: number) {
     this.carImageService.getCarImagesByCarId(carId).subscribe((response) => {
       this.carImages = response.data;
+      console.log(this.carImages);
     });
   }
 
@@ -37,5 +38,10 @@ export class CarImageComponent implements OnInit {
     } else {
       return '';
     }
+  }
+
+  getImageSource(carImage: CarImage): string {
+    let url: string = this.baseUrl + carImage.imagePath;
+    return url;
   }
 }

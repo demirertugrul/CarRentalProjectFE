@@ -18,7 +18,7 @@
         *ngFor="let carImage of carImages"
       >
         <img
-          src="{{ baseUrl }}{{ carImage.imagePath }}"
+          [src]="getImageSource(carImage)"
           class="d-block w-100"
           alt="image.imagePath"
         />
