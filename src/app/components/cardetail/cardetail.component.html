@@ -16,14 +16,14 @@
       <td>{{ car.brandName }}</td>
       <td>{{ car.colorName }}</td>
       <td>{{ car.descriptions }}</td>
-      <td>{{ car.dailyPrice }}</td>
+      <td>{{ car.dailyPrice | currency }}</td>
       <td>
         <button
           data-bs-toggle="modal"
           data-bs-target="#staticBackdrop"
           data-bs-toggle="modal"
           data-bs-target="#staticBackdrop"
-          class="btn btn-success"
+          class="btn btn-danger"
         >
           Book
         </button>

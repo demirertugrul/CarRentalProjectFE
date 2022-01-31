@@ -5,3 +5,6 @@
   border-radius: 50%;
   background-color: transparent;
 }
+#btnInfo:hover {
+  color: rgb(122, 122, 122);
+}

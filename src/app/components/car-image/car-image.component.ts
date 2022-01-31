@@ -27,7 +27,6 @@ export class CarImageComponent implements OnInit {
   getCarImagesByCarId(carId: number) {
     this.carImageService.getCarImagesByCarId(carId).subscribe((response) => {
       this.carImages = response.data;
-      console.log(this.carImages);
     });
   }
 
@@ -41,7 +40,6 @@ export class CarImageComponent implements OnInit {
 
   getImageSource(carImage: CarImage): string {
     let url: string = this.baseUrl + carImage.imagePath;
-    console.log(carImage.imagePath);
     return url;
   }
 }

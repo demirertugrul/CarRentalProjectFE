@@ -11,7 +11,7 @@ export class BrandComponent implements OnInit {
   brands: Brand[] = [];
   dataLoaded: boolean = false;
 
-  currentBrand: Brand | undefined;
+  currentBrand: Brand;
   constructor(private brandService: BrandService) {}
 
   ngOnInit(): void {
