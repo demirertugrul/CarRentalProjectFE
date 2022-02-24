@@ -1,18 +1,85 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BrandAddComponent } from './components/brand-add/brand-add.component';
+import { BrandDetailComponent } from './components/brand-detail/brand-detail.component';
+import { CarAddComponent } from './components/car-add/car-add.component';
+import { CarDetailComponent } from './components/car-detail/car-detail.component';
 import { CarComponent } from './components/car/car.component';
-import { CarDetailComponent } from './components/cardetail/cardetail.component';
-import { HomeComponent } from './components/home/home.component';
+import { ColorAddComponent } from './components/color-add/color-add.component';
+import { ColorDetailComponent } from './components/color-detail/color-detail.component';
+import { LoginComponent } from './components/login/login.component';
+import { PaymentComponent } from './components/payment/payment.component';
+import { RegisterComponent } from './components/register/register.component';
+import { RentalComponent } from './components/rental/rental.component';
+import { UserProfileComponent } from './components/user-profile/user-profile.component';
+import { AdminGuard } from './guards/admin.guard';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', component: HomeComponent },
+  { path: '', component: CarComponent },
   { path: 'cars', component: CarComponent },
-  { path: 'cars/brand/:brandId', component: CarComponent },
-  { path: 'cars/color/:colorId', component: CarComponent },
-  { path: 'cars/details/:carId', component: CarDetailComponent },
-  // { path: 'products/category/:categoryId', component: ColorComponent },
-  // { path: 'products/category/:categoryId', component: CostumerComponent },
-  // { path: 'products/category/:categoryId', component: RentalComponent },
+  {
+    path: 'cars/brand/:brandId',
+    component: CarComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'cars/color/:colorId',
+    component: CarComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'cars/brand/:brandId/color/:colorId',
+    component: CarComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'cars/detail/:carId',
+    component: CarDetailComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'cars/add',
+    component: CarAddComponent,
+    canActivate: [LoginGuard, AdminGuard],
+  },
+  {
+    path: 'brands/add',
+    component: BrandAddComponent,
+    canActivate: [LoginGuard, AdminGuard],
+  },
+  {
+    path: 'brands/detail/:brandId',
+    component: BrandDetailComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'colors/detail/:colorId',
+    component: ColorDetailComponent,
+    canActivate: [LoginGuard],
+  },
+  {
+    path: 'colors/add',
+    component: ColorAddComponent,
+    canActivate: [LoginGuard, AdminGuard],
+  },
+  {
+    path: 'rentals',
+    component: RentalComponent,
+    canActivate: [LoginGuard, AdminGuard],
+  },
+  {
+    path: 'cars/detail/rent/:rental',
+    component: PaymentComponent,
+    canActivate: [LoginGuard],
+  },
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
+  {
+    path: 'profile',
+    component: UserProfileComponent,
+    canActivate: [LoginGuard],
+  },
 ];
 
 @NgModule({

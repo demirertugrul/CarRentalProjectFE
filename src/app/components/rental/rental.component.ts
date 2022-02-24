@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Brand } from 'src/app/models/brand';
-import { Rental } from 'src/app/models/rental';
+import { RentalDetail } from 'src/app/models/rentalDetail';
 import { RentalService } from 'src/app/services/rental.service';
 
 @Component({
@@ -9,7 +8,8 @@ import { RentalService } from 'src/app/services/rental.service';
   styleUrls: ['./rental.component.css'],
 })
 export class RentalComponent implements OnInit {
-  rentals: Rental[] = [];
+  rentals: RentalDetail[] = [];
+  isDataLoaded = false;
 
   constructor(private rentalService: RentalService) {}
 
@@ -20,6 +20,7 @@ export class RentalComponent implements OnInit {
   getRentals() {
     this.rentalService.getRentals().subscribe((response) => {
       this.rentals = response.data;
+      this.isDataLoaded = true;
     });
   }
 }

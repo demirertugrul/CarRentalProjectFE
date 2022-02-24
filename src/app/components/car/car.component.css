@@ -8,3 +8,17 @@
 #btnInfo:hover {
   color: rgb(122, 122, 122);
 }
+.col-sm-3:hover {
+  cursor: pointer;
+}
+
+.container {
+  cursor: pointer;
+}
+
+.card {
+  transition: all 0.5s ease-in-out;
+}
+.card:hover {
+  transform: scale(1.1);
+}

@@ -1,5 +1,6 @@
-export interface Costumer {
-  costumerId: number;
+export interface Customer {
+  id: number;
   userId: number;
+  findeksId: number;
   companyName: string;
 }

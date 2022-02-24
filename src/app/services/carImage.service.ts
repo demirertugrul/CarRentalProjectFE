@@ -8,15 +8,13 @@ import { CarImage } from '../models/carImage';
   providedIn: 'root',
 })
 export class CarImageService {
-  BASE_URL: string = 'https://localhost:44379/api/';
+  apiUrl: string = 'https://localhost:44379/api/';
   constructor(private httpClient: HttpClient) {}
-  getCarImages(): Observable<ListResponseModel<CarImage>> {
-    let newPath = this.BASE_URL + 'carimages/getall';
-    return this.httpClient.get<ListResponseModel<CarImage>>(newPath);
+
+  getImagesByCarId(carId: number): Observable<ListResponseModel<CarImage>> {
+    let apiUrl = this.apiUrl + 'carImages/getbycarid?carId=' + carId;
+    return this.httpClient.get<ListResponseModel<CarImage>>(apiUrl);
   }
 
-  getCarImagesByCarId(carId: number): Observable<ListResponseModel<CarImage>> {
-    let newPath = this.BASE_URL + 'carimages/getbycarid?carId=' + carId;
-    return this.httpClient.get<ListResponseModel<CarImage>>(newPath);
-  }
+  // getCarImagesByColorId() {}
 }
