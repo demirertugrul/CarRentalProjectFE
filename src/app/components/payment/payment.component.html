@@ -1,5 +1,5 @@
 <div class="container" style="margin-top: 50px">
-  <div class="row">
+  <div class="row" style="color: rgb(145, 145, 145)">
     <div class="col">
       <h2 class="title">Payment</h2>
       <form class="row g-3" [formGroup]="creditCardAddForm">
@@ -29,6 +29,8 @@
             formControlName="cardExpMonth"
             id="cardExpMonth"
             placeholder="11"
+            min="1"
+            max="12"
           />
         </div>
         <div class="col-6">
@@ -40,6 +42,7 @@
             formControlName="cardExpYear"
             placeholder="21"
             style="margin-top: 6px"
+            max="2050"
           />
         </div>
         <div class="col-md-12">
@@ -136,6 +139,7 @@
           (click)="selectSavedCreditCard(creditCard)"
           [class]="changeCurrentCardClass(creditCard.id)"
           aria-current="true"
+          style="cursor: pointer"
         >
           <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1">{{ creditCard.cardNumber }}</h5>

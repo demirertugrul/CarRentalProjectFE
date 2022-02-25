@@ -25,17 +25,19 @@ export class CarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.params.subscribe((params) => {
-      if (params['brandId'] && params['colorId']) {
-        this.getCarDetailsByFiltered(params['brandId'], params['colorId']);
-      } else if (params['brandId']) {
-        this.getCarDetailsByBrandId(params['brandId']);
-      } else if (params['colorId']) {
-        this.getCarDetailsByColorId(params['colorId']);
-      } else {
-        this.getCarDetails();
-      }
-    });
+    setTimeout(() => {
+      this.activatedRoute.params.subscribe((params) => {
+        if (params['brandId'] && params['colorId']) {
+          this.getCarDetailsByFiltered(params['brandId'], params['colorId']);
+        } else if (params['brandId']) {
+          this.getCarDetailsByBrandId(params['brandId']);
+        } else if (params['colorId']) {
+          this.getCarDetailsByColorId(params['colorId']);
+        } else {
+          this.getCarDetails();
+        }
+      });
+    }, 2500);
   }
 
   // getImageSource(carId: number): string {
