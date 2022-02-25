@@ -1,39 +1,50 @@
-<div class="container">
-  <div class="card" style="margin-top: 50px">
-    <div class="card-header">
-      <h6>My Profile</h6>
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Name</h5>
-      <p class="card-text">{{ user.firstName }} {{ user.lastName }}</p>
-    </div>
-    <hr class="dropdown-divider" />
-    <div class="card-body">
-      <h5 class="card-title">Email Address</h5>
-      <p class="card-text">{{ user.email }}</p>
-    </div>
-    <hr class="dropdown-divider" />
-    <div class="card-body">
-      <h5 class="card-title">Company Name</h5>
-      <p class="card-text">{{ customerDetail.companyName }}</p>
-    </div>
-    <hr class="dropdown-divider" />
-    <div class="card-body">
-      <h5 class="card-title">Findeks Point</h5>
-      <p class="card-text">{{ customerDetail.findeksPoint }}</p>
+<div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+  <div class="card p-4">
+    <div
+      class="image d-flex flex-column justify-content-center align-items-center"
+    >
+      <button class="btn btn-secondary">
+        <!-- <img src="https://i.imgur.com/wvxPV9S.png" height="100" width="100" /> -->
+        <i class="fa-brands fa-github-alt" style="size: 100px"></i>
+      </button>
+      <span class="name mt-3">{{ user.firstName }} {{ user.lastName }}</span>
+      <span class="idd">{{ user.email }}</span>
+      <span class="idd"
+        ><b>Company Name :</b> {{ customerDetail.companyName }}</span
+      >
+      <span class="idd"
+        ><b>Findex Point :</b> {{ customerDetail.findeksPoint }}</span
+      >
+      <div class="d-flex mt-2">
+        <button
+          type="button"
+          class="btn1 btn-dark"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          id="editButton"
+        >
+          Edit Profile
+        </button>
+      </div>
+      <div
+        class="gap-3 mt-3 icons d-flex flex-row justify-content-center align-items-center"
+      >
+        <a target="_blank" href="https://twitter.com/ertugrulDem11r"
+          ><i class="fa-brands fa-twitter-square"></i
+        ></a>
+        <a target="_blank" href="https://www.linkedin.com/in/ertugruldemir/"
+          ><i class="fa-brands fa-linkedin"></i
+        ></a>
+        <a target="_blank" href="https://github.com/demirertugrul">
+          <i class="fa-brands fa-github"></i
+        ></a>
+      </div>
+      <div class="px-2 rounded mt-4 date">
+        <span class="join">Joined Jan,2021</span>
+      </div>
     </div>
   </div>
-  <button
-    type="button"
-    class="btn btn-success"
-    data-bs-toggle="modal"
-    style="margin-top: 30px; float: right"
-    data-bs-target="#exampleModal"
-  >
-    Update
-  </button>
 </div>
-
 <div
   class="modal fade"
   id="exampleModal"
@@ -43,7 +54,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Update Profile</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Edit Profile</h5>
         <button
           type="button"
           class="btn-close"
@@ -61,24 +72,22 @@
                 class="form-control"
                 formControlName="firstName"
                 id="firstName"
-                placeholder="Enter First Name"
               />
             </div>
           </div>
           <div class="mb-3">
-            <label for="lastName">Last Name:</label>
+            <label for="lastName">Last Name :</label>
             <div class="form-group">
               <input
                 type="text"
                 class="form-control"
                 formControlName="lastName"
                 id="lastName"
-                placeholder="Enter Last Name"
               />
             </div>
           </div>
           <div class="mb-3">
-            <label for="email">Email Adress: </label>
+            <label for="email">Email Address : </label>
             <div class="input-group">
               <span class="input-group-text">@</span>
               <input
@@ -86,35 +95,40 @@
                 class="form-control"
                 formControlName="email"
                 id="email"
-                placeholder="Enter Email Address"
               />
             </div>
           </div>
           <div class="mb-3">
-            <label for="companyName">Company Name: </label>
+            <label for="companyName">Company Name :</label>
             <div class="input-group">
               <input
                 type="text"
                 id="companyName"
                 class="form-control"
-                placeholder="Enter Company Name"
                 formControlName="companyName"
               />
             </div>
           </div>
         </form>
       </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">
-          Cancel
-        </button>
+      <div class="modal-footer" style="margin-right: 100px">
         <button
           type="button"
           class="btn btn-success"
           data-bs-dismiss="modal"
           (click)="updateUser()"
+          id="btn-5"
         >
           Update
+        </button>
+
+        <button
+          type="button"
+          class="btn btn-danger"
+          data-bs-dismiss="modal"
+          id="btn-5"
+        >
+          Cancel
         </button>
       </div>
     </div>

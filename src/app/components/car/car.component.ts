@@ -3,7 +3,9 @@ import { ActivatedRoute } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { CarDetail } from 'src/app/models/carDetails';
 import { CarFilter } from 'src/app/models/carFilter';
+import { CarImage } from 'src/app/models/carImage';
 import { CarService } from 'src/app/services/car.service';
+import { CarImageService } from 'src/app/services/carImage.service';
 
 @Component({
   selector: 'app-car',
@@ -14,10 +16,12 @@ export class CarComponent implements OnInit {
   isDataLoaded = false;
   filterText = '';
   carDetails: CarDetail[] = [];
-
+  carImages: CarImage[] = [];
+  rootPath = 'https://localhost:44379/Uploads/Images/';
   constructor(
     private carService: CarService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private carImageService: CarImageService
   ) {}
 
   ngOnInit(): void {
@@ -34,6 +38,21 @@ export class CarComponent implements OnInit {
     });
   }
 
+  // getImageSource(carId: number): string {
+  //   this.carImageService.getImagesByCarId(carId).subscribe((response) => {
+  //     this.carImages = response.data;
+  //   });
+  //   console.log(this.rootPath + this.carImages[0].imagePath);
+  //   return this.rootPath + this.carImages[0].imagePath;
+  // }
+
+  checkIsCarImageNull() {
+    if (this.carImages.length > 0) {
+      return false;
+    } else {
+      return true;
+    }
+  }
   getCarDetails() {
     return this.carService.getCarDetails().subscribe((response) => {
       this.carDetails = response.data;

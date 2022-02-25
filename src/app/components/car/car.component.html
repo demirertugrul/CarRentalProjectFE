@@ -1,4 +1,3 @@
-<app-car-filter></app-car-filter>
 <div
   *ngIf="isDataLoaded == false"
   class="spinner-border text-primary"
@@ -8,8 +7,9 @@
 </div>
 <div class="container">
   <div class="row">
+    <app-car-filter></app-car-filter>
     <div
-      class="col-sm-3"
+      class="col-3"
       style="margin-bottom: 50px"
       *ngFor="let carDetail of carDetails | carFilter: filterText"
     >
@@ -19,6 +19,13 @@
         style="width: 18rem"
       >
         <div class="card-body">
+          <div>
+            <!-- <img
+              [src]="getImageSource(carDetail.id)"
+              width="17.5rem"
+              height="11rem"
+            /> -->
+          </div>
           <h5 class="card-title">{{ carDetail.carName }}</h5>
           <p class="card-text">{{ carDetail.descriptions }}</p>
         </div>

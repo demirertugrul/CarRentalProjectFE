@@ -10,7 +10,9 @@
     <div *ngFor="let color of colors | colorFilter: filterText">
       <div class="card" routerLink="/cars/color/{{ color.id }}">
         <div class="card-body">
-          <h5 class="card-title">{{ color.colorName }}</h5>
+          <h5 class="card-title" style="font-size: 1rem">
+            {{ color.colorName }}
+          </h5>
         </div>
       </div>
     </div>

@@ -77,20 +77,28 @@
         style="margin-top: 25px"
         class="list-group list-group-flush"
       >
-        <li class="list-group-item">Brand : {{ carDetail.brandName }}</li>
-        <li class="list-group-item">Color : {{ carDetail.colorName }}</li>
-        <li class="list-group-item">Model : {{ carDetail.carName }}</li>
         <li class="list-group-item">
-          Daily Price: {{ carDetail.dailyPrice | currency }}
+          Brand : <b>{{ carDetail.brandName }}</b>
         </li>
         <li class="list-group-item">
-          Descriptions : {{ carDetail.descriptions }}
+          Color : <b>{{ carDetail.colorName }}</b>
+        </li>
+        <li class="list-group-item">
+          Model : <b>{{ carDetail.carName }}</b>
+        </li>
+        <li class="list-group-item">
+          Daily Price: <b>{{ carDetail.dailyPrice | currency }}</b>
+        </li>
+        <li class="list-group-item">
+          Descriptions : <b>{{ carDetail.descriptions }}</b>
         </li>
       </ul>
 
       <div style="max-width: 500px; margin: auto; margin-top: 30px">
         <div style="margin-top: 20px">
-          <label for="rentDate" class="form-label">Rental Date</label>
+          <label for="rentDate" class="form-label" style="color: #919191"
+            >Rental Date</label
+          >
           <input
             type="date"
             [(ngModel)]="rentDate"
@@ -100,7 +108,9 @@
           />
         </div>
         <div style="margin-top: 20px">
-          <label for="returnDate" class="form-label">Delivery Date</label>
+          <label for="returnDate" class="form-label" style="color: #919191"
+            >Delivery Date</label
+          >
           <input
             type="date"
             [(ngModel)]="returnDate"

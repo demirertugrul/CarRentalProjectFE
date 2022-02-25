@@ -1,6 +1,6 @@
-<div class="container" style="margin-top: 50px">
+<div class="container" style="margin-top: 50px; color: rgb(41, 41, 41)">
   <div class="col-md-12">
-    <div class="card">
+    <div class="card" style="background-color: rgb(145, 145, 145)">
       <div class="card-header">
         <h5>Add new Car!</h5>
       </div>
@@ -54,11 +54,12 @@
             <label for="modelYear">Model Year :</label>
             <div class="form-group">
               <input
-                type="number"
+                type="date"
                 class="form-control"
                 formControlName="modelYear"
                 id="modelYear"
                 placeholder="Enter Model Year"
+                min="1997-01-01"
               />
             </div>
           </div>
