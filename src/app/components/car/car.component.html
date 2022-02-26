@@ -1,37 +1,54 @@
 <div class="container">
   <div class="row">
-    <app-car-filter></app-car-filter>
-    <div
-      class="col-3"
-      style="margin-bottom: 50px"
-      *ngFor="let carDetail of carDetails | carFilter: filterText"
-    >
-      <div
-        class="card"
-        routerLink="/cars/detail/{{ carDetail.id }}"
-        style="width: 18rem"
-      >
-        <div class="card-body">
-          <div>
-            <!-- <img
-              [src]="getImageSource(carDetail.id)"
-              width="17.5rem"
-              height="11rem"
-            /> -->
+    <div class="col-md-2">
+      <app-car-filter></app-car-filter><br />
+      <app-brand></app-brand>
+      <app-color></app-color>
+    </div>
+    <div class="col-md-10">
+      <div class="row">
+        <div
+          class="col-md-4 mb-3"
+          style="margin-bottom: 50px"
+          *ngFor="let carDetail of carDetails | carFilter: filterText"
+        >
+          <div
+            class="card"
+            routerLink="/cars/detail/{{ carDetail.id }}"
+            style="
+              width: 18rem;
+              top: 34px;
+              color: rgb(211, 211, 211);
+              background-color: rgb(66, 66, 66);
+            "
+          >
+            <div class="card-body">
+              <img
+                [src]="getImageSource(carDetail.id)"
+                class="card-img-top"
+                alt="..."
+                style="
+                  height: 10rem;
+                  width: 16rem;
+                  margin: auto;
+                  background: none;
+                "
+              />
+              <h5 class="card-title">{{ carDetail.carName }}</h5>
+              <p class="card-text">{{ carDetail.descriptions }}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">
+                Daily Price: {{ carDetail.dailyPrice | currency }}
+              </li>
+              <li class="list-group-item">Color : {{ carDetail.colorName }}</li>
+              <li class="list-group-item">Brand : {{ carDetail.brandName }}</li>
+              <li class="list-group-item">
+                Required Findeks Score : {{ carDetail.minFindeksScore }}
+              </li>
+            </ul>
           </div>
-          <h5 class="card-title">{{ carDetail.carName }}</h5>
-          <p class="card-text">{{ carDetail.descriptions }}</p>
         </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            Daily Price: {{ carDetail.dailyPrice | currency }}
-          </li>
-          <li class="list-group-item">Color : {{ carDetail.colorName }}</li>
-          <li class="list-group-item">Brand : {{ carDetail.brandName }}</li>
-          <li class="list-group-item">
-            Required Findeks Score : {{ carDetail.minFindeksScore }}
-          </li>
-        </ul>
       </div>
     </div>
   </div>

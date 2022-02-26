@@ -17,8 +17,13 @@
 }
 
 .card {
-  transition: all 0.5s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 .card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
+}
+
+div ul > li {
+  color: rgb(158, 154, 154);
+  background-color: rgb(66, 66, 66);
 }

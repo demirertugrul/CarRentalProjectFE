@@ -23,10 +23,8 @@ export class CarFilterComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.getBrands();
-      this.getColors();
-    }, 2500);
+    this.getBrands();
+    this.getColors();
   }
 
   getBrands() {

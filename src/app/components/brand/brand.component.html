@@ -5,14 +5,21 @@
 >
   <span class="visually-hidden">Loading...</span>
 </div>
-<div class="container">
+<div class="container" style="display: flex">
   <div class="row">
     <div *ngFor="let brand of brands | brandFilter: filterText">
-      <div class="card" routerLink="/cars/brand/{{ brand.id }}">
-        <div class="card-body">
-          <h5 class="card-title" style="font-size: 1rem">{{ brand.name }}</h5>
+      <div
+        class="card"
+        style="width: 100px"
+        routerLink="/cars/brand/{{ brand.id }}"
+      >
+        <div class="card-body" (click)="topFunction()">
+          <h5 class="card-title" style="font-size: 1rem">
+            {{ brand.name }}
+          </h5>
         </div>
       </div>
     </div>
   </div>
 </div>
+<br />

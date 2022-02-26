@@ -190,7 +190,7 @@ export class PaymentComponent implements OnInit {
     this.creditCardService.addCreditCard(creditCard).subscribe(
       (response) => {
         console.log(response);
-        this.toastrService.info('Credit Card saved.', 'Bilgilendirme!');
+        this.toastrService.info('Credit Card saved.', 'Info!');
       },
       (errorResponse) => {
         console.log(errorResponse);

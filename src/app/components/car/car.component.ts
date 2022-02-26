@@ -25,29 +25,39 @@ export class CarComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.activatedRoute.params.subscribe((params) => {
-        if (params['brandId'] && params['colorId']) {
-          this.getCarDetailsByFiltered(params['brandId'], params['colorId']);
-        } else if (params['brandId']) {
-          this.getCarDetailsByBrandId(params['brandId']);
-        } else if (params['colorId']) {
-          this.getCarDetailsByColorId(params['colorId']);
-        } else {
-          this.getCarDetails();
-        }
-      });
-    }, 2500);
+    this.activatedRoute.params.subscribe((params) => {
+      this.getCarImages();
+      if (params['brandId'] && params['colorId']) {
+        this.getCarDetailsByFiltered(params['brandId'], params['colorId']);
+      } else if (params['brandId']) {
+        this.getCarDetailsByBrandId(params['brandId']);
+      } else if (params['colorId']) {
+        this.getCarDetailsByColorId(params['colorId']);
+      } else {
+        // setTimeout(() => {
+        this.getCarDetails();
+        // }, 3000);
+      }
+    });
+  }
+  getCarImages() {
+    this.carImageService.getCarImages().subscribe((response) => {
+      this.carImages = response.data;
+    });
   }
 
-  // getImageSource(carId: number): string {
-  //   this.carImageService.getImagesByCarId(carId).subscribe((response) => {
-  //     this.carImages = response.data;
-  //   });
-  //   console.log(this.rootPath + this.carImages[0].imagePath);
-  //   return this.rootPath + this.carImages[0].imagePath;
-  // }
-
+  getImageSource(carId: number): string {
+    let carImage = this.carImages.find((c) => c.carId === carId);
+    if (carImage) {
+      let url: string =
+        'https://localhost:44379/Uploads/Images/' + carImage.imagePath;
+      return url;
+    } else {
+      let defaultImageUrl =
+        'https://localhost:44379/Uploads/Images/DefaultImage.jpg';
+      return defaultImageUrl;
+    }
+  }
   checkIsCarImageNull() {
     if (this.carImages.length > 0) {
       return false;

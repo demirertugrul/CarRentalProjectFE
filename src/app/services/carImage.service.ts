@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ListResponseModel } from 'src/app/models/listResponseModel';
 import { CarImage } from '../models/carImage';
+import { ResponseModel } from '../models/responseModel';
 
 @Injectable({
   providedIn: 'root',
@@ -16,5 +17,8 @@ export class CarImageService {
     return this.httpClient.get<ListResponseModel<CarImage>>(apiUrl);
   }
 
-  // getCarImagesByColorId() {}
+  getCarImages(): Observable<ListResponseModel<CarImage>> {
+    let newPath = this.apiUrl + 'carImages/getall';
+    return this.httpClient.get<ListResponseModel<CarImage>>(newPath);
+  }
 }

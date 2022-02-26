@@ -5,11 +5,15 @@
 >
   <span class="visually-hidden">Loading...</span>
 </div>
-<div class="container">
+<div class="container" style="display: flex">
   <div class="row">
     <div *ngFor="let color of colors | colorFilter: filterText">
-      <div class="card" routerLink="/cars/color/{{ color.id }}">
-        <div class="card-body">
+      <div
+        class="card"
+        style="width: 100px"
+        routerLink="/cars/color/{{ color.id }}"
+      >
+        <div class="card-body" (click)="topFunction()">
           <h5 class="card-title" style="font-size: 1rem">
             {{ color.colorName }}
           </h5>
