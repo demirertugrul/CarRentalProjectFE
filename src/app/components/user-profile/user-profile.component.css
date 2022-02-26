@@ -16,11 +16,11 @@ body {
 }
 
 .image button i {
-  transition: all 0.5s;
+  transition: all 1s;
 }
 
 .image button:hover i {
-  transform: scale(4);
+  transform: scale(7);
 }
 
 .btn {
