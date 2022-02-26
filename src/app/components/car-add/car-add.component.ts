@@ -44,6 +44,7 @@ export class CarAddComponent implements OnInit {
       carName: ['', Validators.required],
       modelYear: ['', Validators.required],
       dailyPrice: ['', Validators.required],
+      minFindeksScore: ['', Validators.required],
       description: ['', Validators.required],
     });
   }

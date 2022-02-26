@@ -109,6 +109,14 @@ export class CarDetailComponent implements OnInit {
       });
   }
 
+  checkAdmin(): boolean {
+    if (this.localStorageService.getItem('user_claim') === '"admin"') {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   checkFindeksScore() {
     if (this.carDetail.minFindeksScore > this.customerDetail.findeksPoint) {
       return false;

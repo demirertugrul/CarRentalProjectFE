@@ -1,0 +1,9 @@
+#addBtn {
+  transition: all 0.1s ease-in-out;
+}
+#addBtn:hover {
+  transform: scale(1.05);
+}
+.mb-3 {
+  width: 40%;
+}

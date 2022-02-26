@@ -2,7 +2,10 @@
   <div class="row">
     <div class="col-12">
       <div class="form-floating" style="width: 100px">
-        <label for="brandFilter" class="form-label" style="top: -10px"
+        <label
+          for="brandFilter"
+          class="form-label"
+          style="top: -10px; color: rgb(231, 231, 231)"
           ><b>Brands</b></label
         >
         <select
@@ -10,8 +13,13 @@
           id="brandFilter"
           aria-label="Default select example"
           [(ngModel)]="selectedBrandId"
+          style="background-color: rgb(83, 83, 83); color: rgb(255, 255, 255)"
         >
-          <option *ngFor="let brand of brands" [value]="brand.id">
+          <option
+            *ngFor="let brand of brands"
+            [value]="brand.id"
+            style="color: rgb(255, 255, 255)"
+          >
             {{ brand.name }}
           </option>
         </select>
@@ -19,7 +27,10 @@
     </div>
     <div class="col-6">
       <div class="form-floating" style="width: 100px; top: 7px">
-        <label for="colorFilter" class="form-label" style="top: -10px"
+        <label
+          for="colorFilter"
+          class="form-label"
+          style="top: -10px; color: rgb(231, 231, 231)"
           ><b>Colors</b></label
         >
         <select
@@ -27,6 +38,7 @@
           id="colorFilter"
           aria-label="Default select example"
           [(ngModel)]="selectedColorId"
+          style="background-color: rgb(83, 83, 83); color: rgb(255, 255, 255)"
         >
           <option *ngFor="let color of colors" [value]="color.id">
             {{ color.colorName }}
@@ -48,6 +60,7 @@
         width: 100px;
         margin-top: 10px;
         margin-left: 24px;
+        background-color: aqua;
       "
     >
       Filter All
@@ -64,6 +77,7 @@
         width: 100px;
         margin-top: 10px;
         margin-left: 24px;
+        background-color: aqua;
       "
     >
       Clear
