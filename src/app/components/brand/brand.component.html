@@ -3,7 +3,11 @@
     <div *ngFor="let brand of brands | brandFilter: filterText">
       <div
         class="card"
-        style="width: 100px"
+        style="
+          width: 100px;
+          background-color: rgb(139, 86, 86);
+          color: rgb(240, 201, 150);
+        "
         routerLink="/cars/brand/{{ brand.id }}"
       >
         <div class="card-body" (click)="topFunction()">

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { CarDetail } from 'src/app/models/carDetails';
 import { CarFilter } from 'src/app/models/carFilter';
 import { CarImage } from 'src/app/models/carImage';
@@ -34,9 +33,7 @@ export class CarComponent implements OnInit {
       } else if (params['colorId']) {
         this.getCarDetailsByColorId(params['colorId']);
       } else {
-        // setTimeout(() => {
         this.getCarDetails();
-        // }, 3000);
       }
     });
   }

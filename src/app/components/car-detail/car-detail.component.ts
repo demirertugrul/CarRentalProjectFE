@@ -134,10 +134,11 @@ export class CarDetailComponent implements OnInit {
   }
 
   checkIsCarImageNull() {
-    if (this.carImages.length > 0) {
-      return false;
-    } else {
+    let isExistCarImage = this.carImages.find((image) => image.id === 0);
+    if (isExistCarImage) {
       return true;
+    } else {
+      return false;
     }
   }
 
