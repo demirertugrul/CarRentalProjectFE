@@ -28,6 +28,7 @@ export class BrandDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe((params) => {
+      params[''];
       if (params['brandId']) {
         this.getBrandById(params['brandId']);
         this.createBrandUpdateForm();

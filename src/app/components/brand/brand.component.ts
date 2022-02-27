@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Brand } from 'src/app/models/brand';
 import { BrandService } from 'src/app/services/brand.service';
+import { LocalStorageService } from 'src/app/services/local-storage.service';
 
 @Component({
   selector: 'app-brand',
@@ -9,10 +10,14 @@ import { BrandService } from 'src/app/services/brand.service';
 })
 export class BrandComponent implements OnInit {
   isDataLoaded = false;
+  isAdminClass: boolean = false;
   filterText = '';
   brands: Brand[] = [];
 
-  constructor(private brandService: BrandService) {}
+  constructor(
+    private brandService: BrandService,
+    private localStorageService: LocalStorageService
+  ) {}
 
   ngOnInit(): void {
     this.getBrands();
@@ -27,5 +32,15 @@ export class BrandComponent implements OnInit {
   topFunction() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
+  }
+
+  checkIsAdmin(): boolean {
+    if (this.localStorageService.getItem('user_claim').startsWith('"admin')) {
+      console.log('ee true');
+      this.isAdminClass = true;
+      return true;
+    } else {
+      return false;
+    }
   }
 }

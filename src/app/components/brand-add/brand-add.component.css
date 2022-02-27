@@ -1,0 +1,10 @@
+.container {
+  margin-top: 50px;
+  width: 50%;
+}
+div .col-md-12 {
+  background-color: rgb(145, 145, 145);
+}
+div .card {
+  background-color: rgb(145, 145, 145);
+}

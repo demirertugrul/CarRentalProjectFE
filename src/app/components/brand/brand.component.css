@@ -1,14 +1,43 @@
 ul > li {
   cursor: pointer;
 }
-.row {
+.container #isRow {
   overflow-y: scroll;
 }
-.container:hover {
+.container {
+  display: flex;
+  height: 120px;
+}
+div .card:hover {
   cursor: pointer;
 }
 .card:hover {
   transform: scale(1.03);
+}
+
+.card-title {
+  font-size: 1rem;
+  text-align: center;
+}
+#cardButNotAdmin {
+  cursor: pointer;
+  background-color: rgb(105, 94, 94);
+  color: rgb(224, 203, 174);
+  width: 143px;
+}
+div .card {
+  background-color: rgb(105, 94, 94);
+  color: rgb(224, 203, 174);
+  width: 90px !important;
+}
+
+#cardButNotAdmin:hover {
+  transform: scale(1.03);
+}
+
+div i:hover {
+  color: rgb(224, 203, 174);
+  cursor: pointer;
 }
 ::-webkit-scrollbar {
   width: 10px;
