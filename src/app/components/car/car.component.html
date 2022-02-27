@@ -1,3 +1,11 @@
+<div
+  *ngIf="isDataLoaded == false"
+  class="spinner-border text-primary"
+  role="status"
+  style="display: flex; position: absolute; top: 50%; left: 50%"
+>
+  <span class="visually-hidden">Loading...</span>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-md-2">
@@ -27,12 +35,7 @@
                 [src]="getImageSource(carDetail.id)"
                 class="card-img-top"
                 alt="..."
-                style="
-                  height: 10rem;
-                  width: 16rem;
-                  margin: auto;
-                  background: none;
-                "
+                style="height: 10rem; width: 16rem; margin: auto"
               />
               <h5 class="card-title">{{ carDetail.carName }}</h5>
               <p class="card-text">{{ carDetail.descriptions }}</p>

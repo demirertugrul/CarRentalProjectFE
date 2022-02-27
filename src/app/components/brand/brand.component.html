@@ -1,17 +1,17 @@
-<div class="container" style="display: flex">
+<div class="container" style="display: flex; height: 120px">
   <div class="row">
     <div *ngFor="let brand of brands | brandFilter: filterText">
       <div
         class="card"
         style="
-          width: 100px;
           background-color: rgb(105, 94, 94);
           color: rgb(224, 203, 174);
+          width: 143px;
         "
         routerLink="/cars/brand/{{ brand.id }}"
       >
         <div class="card-body" (click)="topFunction()">
-          <h5 class="card-title" style="font-size: 1rem">
+          <h5 class="card-title" style="font-size: 1rem; text-align: center">
             {{ brand.name }}
           </h5>
         </div>
