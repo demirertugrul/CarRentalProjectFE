@@ -35,6 +35,11 @@ export class ColorDetailComponent implements OnInit {
     });
   }
 
+  getColorById(id: number) {
+    this.colorService.getColorByColorId(id).subscribe((response) => {
+      this.color = response.data;
+    });
+  }
   createColorUpdateForm() {
     this.colorUpdateForm = this.formBuilder.group({
       colorName: ['', Validators.required],
@@ -81,11 +86,5 @@ export class ColorDetailComponent implements OnInit {
     } else {
       this.toastrService.error('Missing data..', 'Failed!');
     }
-  }
-
-  getColorById(id: number) {
-    this.colorService.getColorByColorId(id).subscribe((response) => {
-      this.color = response.data;
-    });
   }
 }

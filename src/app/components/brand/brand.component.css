@@ -11,6 +11,9 @@ ul > li {
 div .card:hover {
   cursor: pointer;
 }
+div .col-md-6 {
+  cursor: pointer;
+}
 .card:hover {
   transform: scale(1.03);
 }
@@ -26,8 +29,6 @@ div .card:hover {
   width: 143px;
 }
 div .card {
-  background-color: rgb(105, 94, 94);
-  color: rgb(224, 203, 174);
   width: 90px !important;
 }
 

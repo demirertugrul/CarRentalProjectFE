@@ -35,8 +35,7 @@ export class BrandComponent implements OnInit {
   }
 
   checkIsAdmin(): boolean {
-    if (this.localStorageService.getItem('user_claim').startsWith('"admin')) {
-      console.log('ee true');
+    if (this.localStorageService.getItem('user_claim') === '"admin"') {
       this.isAdminClass = true;
       return true;
     } else {

@@ -1,19 +1,36 @@
 <div class="container" style="display: flex; height: 120px">
-  <div class="row">
+  <div id="isRow" class="row">
     <div *ngFor="let color of colors | colorFilter: filterText">
-      <div
-        class="card"
-        style="
-          background-color: rgb(105, 94, 94);
-          color: rgb(224, 203, 174);
-          width: 143px;
-        "
-        routerLink="/cars/color/{{ color.id }}"
-      >
-        <div class="card-body" (click)="topFunction()">
-          <h5 class="card-title" style="font-size: 1rem; text-align: center">
-            {{ color.colorName }}
-          </h5>
+      <div class="row">
+        <div class="col-md-6">
+          <div
+            class="card"
+            style="
+              background-color: rgb(105, 94, 94);
+              color: rgb(224, 203, 174);
+              width: 143px;
+            "
+            routerLink="/cars/color/{{ color.id }}"
+          >
+            <div class="card-body" (click)="topFunction()">
+              <h5
+                class="card-title"
+                style="font-size: 1rem; text-align: center"
+              >
+                {{ color.colorName }}
+              </h5>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div *ngIf="checkIsAdmin()">
+            <i
+              class="fa-solid fa-key"
+              style="font-size: 40px; margin-left: 20px; margin-top: 10px"
+              routerLink="/colors/detail/{{ color.id }}"
+              title="{{ color.colorName }} Repair"
+            ></i>
+          </div>
         </div>
       </div>
     </div>

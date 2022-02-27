@@ -51,12 +51,12 @@ const routes: Routes = [
   {
     path: 'brands/detail/:brandId',
     component: BrandDetailComponent,
-    canActivate: [LoginGuard],
+    canActivate: [LoginGuard, AdminGuard],
   },
   {
     path: 'colors/detail/:colorId',
     component: ColorDetailComponent,
-    canActivate: [LoginGuard],
+    canActivate: [LoginGuard, AdminGuard],
   },
   {
     path: 'colors/add',
