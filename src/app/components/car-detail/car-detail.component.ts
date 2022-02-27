@@ -288,7 +288,7 @@ export class CarDetailComponent implements OnInit {
     this.carUpdateForm = this.formBuilder.group({
       brandId: ['', Validators.required],
       colorId: ['', Validators.required],
-      carName: ['', Validators.required],
+      modelName: ['', Validators.required],
       modelYear: ['', Validators.required],
       dailyPrice: ['', Validators.required],
       descriptions: ['', Validators.required],
@@ -299,7 +299,7 @@ export class CarDetailComponent implements OnInit {
     this.carUpdateForm.setValue({
       brandId: [this.carDetail.brandId],
       colorId: [this.carDetail.colorId],
-      carName: [this.carDetail.carName],
+      modelName: [this.carDetail.carName],
       modelYear: [this.carDetail.modelYear],
       dailyPrice: [this.carDetail.dailyPrice],
       descriptions: [this.carDetail.descriptions],
