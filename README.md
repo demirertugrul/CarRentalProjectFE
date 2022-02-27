@@ -6,21 +6,21 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ---
 
-![](https://raw.githubusercontent.com/demirertugrul/CarRentalProjectFE/main/images/ss.png)
+![](https://raw.githubusercontent.com/demirertugrul/CarRentalProjectFE/main/images/ss.PNG)
 
   <br>
   
   
   ---
 
-![](https://raw.githubusercontent.com/demirertugrul/CarRentalProjectFE/main/images/ss1.png)
+![](https://raw.githubusercontent.com/demirertugrul/CarRentalProjectFE/main/images/ss1.PNG)
 
   <br>
   
   
   ---
 
-![](https://raw.githubusercontent.com/demirertugrul/CarRentalProjectFE/main/images/ss3.png)
+![](https://raw.githubusercontent.com/demirertugrul/CarRentalProjectFE/main/images/ss3.PNG)
 
 ## Development server
 
