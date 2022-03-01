@@ -1,0 +1,14 @@
+div ul > li {
+  color: rgb(197, 194, 194);
+  background-color: rgb(49, 48, 48);
+}
+div input {
+  color: rgb(158, 154, 154);
+  background-color: rgb(66, 66, 66);
+}
+button {
+  transition: all 0.3s ease-in-out;
+}
+button:hover {
+  transform: scale(1.3);
+}

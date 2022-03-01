@@ -211,7 +211,9 @@ export class CarDetailComponent implements OnInit {
         this.toastrService.success(
           'Worked! You are redirected to the payment page..'
         );
-        this.router.navigate(['/cars/detail/rent/' + JSON.stringify(rental)]);
+        setTimeout(() => {
+          this.router.navigate(['/cars/detail/rent/' + JSON.stringify(rental)]);
+        }, 1000);
       } else {
         this.toastrService.error('The date information is invalid.');
         this.router.navigate(['/']);

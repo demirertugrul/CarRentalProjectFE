@@ -31,13 +31,15 @@
               cursor: pointer;
             "
           >
-            <div class="card-body">
+            <div class="card-mg-top">
               <img
                 [src]="getImageSource(carDetail.id)"
                 class="card-img-top"
                 alt="..."
-                style="height: 10rem; width: 16rem; margin: auto"
+                style="height: 10rem; width: 18rem; margin: auto"
               />
+            </div>
+            <div class="card-body">
               <h5 class="card-title">{{ carDetail.carName }}</h5>
               <p class="card-text">{{ carDetail.descriptions }}</p>
             </div>
