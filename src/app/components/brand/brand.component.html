@@ -4,8 +4,8 @@
       <div class="row">
         <div class="col-md-6">
           <div
-            [ngClass]="{ card: isAdminClass }"
-            id="cardButNotAdmin"
+            class="card"
+            [ngStyle]="{ width: cardWidth }"
             routerLink="/cars/brand/{{ brand.id }}"
           >
             <div class="card-body" (click)="topFunction()">

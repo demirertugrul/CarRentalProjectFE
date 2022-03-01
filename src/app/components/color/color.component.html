@@ -5,11 +5,7 @@
         <div class="col-md-6">
           <div
             class="card"
-            style="
-              background-color: rgb(105, 94, 94);
-              color: rgb(224, 203, 174);
-              width: 143px;
-            "
+            [ngStyle]="{ width: cardWidth }"
             routerLink="/cars/color/{{ color.id }}"
           >
             <div class="card-body" (click)="topFunction()">

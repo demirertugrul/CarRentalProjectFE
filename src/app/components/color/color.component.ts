@@ -11,7 +11,7 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
 export class ColorComponent implements OnInit {
   filterText = '';
   isDataLoaded = false;
-  isAdminClass: boolean = false;
+  cardWidth = '143px';
   colors: Color[] = [];
 
   constructor(
@@ -36,7 +36,7 @@ export class ColorComponent implements OnInit {
 
   checkIsAdmin(): boolean {
     if (this.localStorageService.getItem('user_claim') === '"admin"') {
-      this.isAdminClass = true;
+      this.cardWidth = '90px';
       return true;
     } else {
       return false;

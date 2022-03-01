@@ -12,6 +12,7 @@ export class BrandComponent implements OnInit {
   isDataLoaded = false;
   isAdminClass: boolean = false;
   filterText = '';
+  cardWidth = '143px';
   brands: Brand[] = [];
 
   constructor(
@@ -36,7 +37,7 @@ export class BrandComponent implements OnInit {
 
   checkIsAdmin(): boolean {
     if (this.localStorageService.getItem('user_claim') === '"admin"') {
-      this.isAdminClass = true;
+      this.cardWidth = '90px';
       return true;
     } else {
       return false;

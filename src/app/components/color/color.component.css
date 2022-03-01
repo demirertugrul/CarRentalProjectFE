@@ -22,17 +22,13 @@ div .col-md-6 {
   font-size: 1rem;
   text-align: center;
 }
-#cardButNotAdmin {
+div .card {
   cursor: pointer;
   background-color: rgb(105, 94, 94);
   color: rgb(224, 203, 174);
   width: 143px;
 }
-div .card {
-  width: 90px !important;
-}
-
-#cardButNotAdmin:hover {
+div .card :hover {
   transform: scale(1.03);
 }
 
