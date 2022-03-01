@@ -17,6 +17,7 @@
       <th scope="col">Costumer</th>
       <th scope="col">Rent Date</th>
       <th scope="col">Delivery Date</th>
+      <th></th>
     </tr>
   </thead>
   <tbody *ngFor="let rental of rentals">
@@ -26,6 +27,16 @@
       <td>{{ rental.customerName }}</td>
       <td>{{ rental.rentDate | date }}</td>
       <td>{{ rental.returnDate | date }}</td>
+      <td>
+        <div
+          type="submit"
+          class="btn btn-primary"
+          style="float: left"
+          (click)="deleteRental(rental.id)"
+        >
+          Delete
+        </div>
+      </td>
     </tr>
   </tbody>
 </table>

@@ -20,6 +20,11 @@ export class RentalService {
     return this.httpClient.get<ListResponseModel<RentalDetail>>(apiUrl);
   }
 
+  getAll(): Observable<ListResponseModel<Rental>> {
+    let apiUrl = this.apiUrl + 'carrentals/getall';
+    return this.httpClient.get<ListResponseModel<Rental>>(apiUrl);
+  }
+
   getLastRentalByCarId(carId: number): Observable<SingleResponseModel<Rental>> {
     let apiUrl = this.apiUrl + 'carrentals/getlastrentalbycarid?carId=' + carId;
     return this.httpClient.get<SingleResponseModel<Rental>>(apiUrl);
@@ -27,6 +32,11 @@ export class RentalService {
 
   addRental(rental: Rental): Observable<ResponseModel> {
     let apiUrl = this.apiUrl + 'carrentals/add';
+    return this.httpClient.post<ResponseModel>(apiUrl, rental);
+  }
+
+  delete(rental: Rental) {
+    let apiUrl = this.apiUrl + 'carrentals/delete';
     return this.httpClient.post<ResponseModel>(apiUrl, rental);
   }
 }
