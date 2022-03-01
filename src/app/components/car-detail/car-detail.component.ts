@@ -5,7 +5,6 @@ import { Rental } from 'src/app/models/rental';
 import { CarImage } from './../../models/carImage';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import {
   FormGroup,
   FormControl,
@@ -22,6 +21,7 @@ import { ColorService } from 'src/app/services/color.service';
 import { RentalService } from 'src/app/services/rental.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
 import { CustomerService } from 'src/app/services/customer.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-car-detail',
@@ -68,8 +68,8 @@ export class CarDetailComponent implements OnInit {
     private localStorageService: LocalStorageService,
     private activatedRoute: ActivatedRoute,
     private rentalService: RentalService,
-    private toastrService: ToastrService,
     private formBuilder: FormBuilder,
+    private toastrService: ToastrService,
     private router: Router
   ) {}
 
@@ -199,8 +199,9 @@ export class CarDetailComponent implements OnInit {
 
   rentCar(rental: Rental) {
     if (!this.checkFindeksScore()) {
+      this.toastrService.error('Findex point is not enough..', 'Error!');
       this.router.navigate(['cars/detail/', this.carDetail.id]);
-      this.toastrService.error('Findex point is not enough..', 'Failed!');
+      console.log(rental);
     } else {
       this.controlDates();
       rental.carId = this.carId;
@@ -215,8 +216,8 @@ export class CarDetailComponent implements OnInit {
           this.router.navigate(['/cars/detail/rent/' + JSON.stringify(rental)]);
         }, 1000);
       } else {
-        this.toastrService.error('The date information is invalid.');
-        this.router.navigate(['/']);
+        this.toastrService.error('The date information is invalid.', 'Error!');
+        this.router.navigate(['cars/detail/', this.carDetail.id]);
       }
     }
   }

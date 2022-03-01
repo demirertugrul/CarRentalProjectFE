@@ -29,9 +29,9 @@ export class NaviComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.getUserDetails();
     this.checkIsAuthorizated();
     this.checkIsAdmin();
-    this.getUserDetails();
     this.getBrands();
     this.getColors();
   }
