@@ -74,8 +74,10 @@ export class NaviComponent implements OnInit {
     this.localStorageService.delete('token');
     this.localStorageService.delete('user_details');
     this.localStorageService.delete('user_claim');
-    this.toastrService.info('Çıkış yapıldı.', 'Bilgilendirme!');
-    this.router.navigate(['login']);
-    window.location.reload();
+    setTimeout(() => {
+      this.toastrService.info('Çıkış yapıldı.', 'Bilgilendirme!');
+      this.router.navigate(['login']);
+      window.location.reload();
+    }, 1500);
   }
 }
