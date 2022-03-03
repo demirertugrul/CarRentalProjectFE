@@ -10,7 +10,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   
   
   ---
-![](https://raw.githubusercontent.com/demirertugrul/CarRentalProjectFE/main/page-images/ss1.png)
+![](https://raw.githubusercontent.com/demirertugrul/CarRentalProjectFE/main/page-images/login.gif)
 
   <br>
   
