@@ -85,6 +85,8 @@ export class CarDetailComponent implements OnInit {
         this.getBrands();
         this.getColors();
         this.createCarUpdateForm();
+        this.returnDateFormat();
+        this.getToday();
       }
     });
   }
@@ -153,6 +155,16 @@ export class CarDetailComponent implements OnInit {
     });
   }
 
+  getToday(): string {
+    let today: string;
+    let date = new Date();
+    let dd = String(date.getDate()).padStart(2, '0');
+    let mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = date.getFullYear().toString();
+
+    today = yyyy + '-' + mm + '-' + dd;
+    return today;
+  }
   returnDateFormat() {
     this.lastRentalReturnDate =
       new Date(this.lastRental.returnDate.toString()).getFullYear().toString() +
