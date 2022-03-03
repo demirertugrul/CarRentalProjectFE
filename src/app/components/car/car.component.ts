@@ -62,6 +62,52 @@ export class CarComponent implements OnInit {
       return true;
     }
   }
+
+  filterByDailyPrice() {
+    this.carDetails.sort((a, b) => {
+      if (a.dailyPrice > b.dailyPrice) {
+        return 1;
+      }
+      if (a.dailyPrice < b.dailyPrice) {
+        return -1;
+      }
+      return 0;
+    });
+  }
+  filterByDailyPrice2() {
+    this.carDetails.sort((a, b) => {
+      if (a.dailyPrice > b.dailyPrice) {
+        return -1;
+      }
+      if (a.dailyPrice < b.dailyPrice) {
+        return 0;
+      }
+      return 0;
+    });
+  }
+
+  filterByMinFindeksScore() {
+    this.carDetails.sort((a, b) => {
+      if (a.minFindeksScore > b.minFindeksScore) {
+        return 1;
+      }
+      if (a.minFindeksScore < b.minFindeksScore) {
+        return -1;
+      }
+      return 0;
+    });
+  }
+  filterByMinFindeksScore2() {
+    this.carDetails.sort((a, b) => {
+      if (a.minFindeksScore > b.minFindeksScore) {
+        return -1;
+      }
+      if (a.minFindeksScore < b.minFindeksScore) {
+        return 1;
+      }
+      return 0;
+    });
+  }
   getCarDetails() {
     return this.carService.getCarDetails().subscribe((response) => {
       this.carDetails = response.data;

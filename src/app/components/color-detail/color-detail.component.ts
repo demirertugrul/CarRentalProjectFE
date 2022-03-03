@@ -5,7 +5,7 @@ import {
   FormGroup,
   FormControl,
 } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Color } from 'src/app/models/color';
 import { ColorService } from 'src/app/services/color.service';
@@ -23,7 +23,8 @@ export class ColorDetailComponent implements OnInit {
     private colorService: ColorService,
     private formBuilder: FormBuilder,
     private activatedRoute: ActivatedRoute,
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -49,6 +50,7 @@ export class ColorDetailComponent implements OnInit {
   deleteColor(color: Color) {
     this.colorService.delete(color).subscribe(
       (response) => {
+        this.router.navigate(['cars']);
         this.toastrService.success('Deleted color.', 'Worked!');
       },
       (responseError) => {
