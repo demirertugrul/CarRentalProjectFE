@@ -149,7 +149,7 @@ button {
 button:hover {
   transform: scale(1.05);
 }
-.form-select option {
+#brandFilter {
   overflow-y: scroll;
 }
 
