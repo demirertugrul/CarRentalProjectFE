@@ -4,8 +4,6 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Images
 
----
-
 ![](https://raw.githubusercontent.com/demirertugrul/CarRentalProjectFE/main/page-images/ss.png)
 
   <br>
@@ -52,6 +50,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ---
 
 ![](https://raw.githubusercontent.com/demirertugrul/CarRentalProjectFE/main/page-images/ss9.png)
+<br>
+
+---
+
+![](https://raw.githubusercontent.com/demirertugrul/CarRentalProjectFE/main/page-images/ss10.png)
 
 ## Development server
 
