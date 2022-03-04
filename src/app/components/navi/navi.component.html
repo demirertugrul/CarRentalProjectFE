@@ -1,14 +1,46 @@
 <nav class="navbar navbar-expand-lg navbar-dark shadow-5-strong">
   <div class="container-fluid">
     <div class="site-logo">
-      <a class="navbar-brand" href="">Give me a Car</a>
+      <a class="navbar-brand" href="">
+        <p class="bubble thought" style="color: rgb(0, 0, 0); right: -50px">
+          Give me a Car!
+        </p>
+      </a>
+      <img
+        src="../../../assets/tumblr_654272c562c4cba80b5d768057ba909a_0e9b04ca_400.png"
+        alt="gwen"
+        title="gwen"
+        style="width: 100px; height: 100px; top: -50px; border-radius: 50%"
+      />
     </div>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+    <p
+      class="bubble speech"
+      id="secondCha"
+      style="color: rgb(0, 0, 0); right: -150px; top: -50px"
+    >
+      Nooo, I can't give it to you, I'm sooo sorry. But I have something else.
+    </p>
+    <img
+      src="../../../assets/98fa9f974e524e8d0e8faf1a34a3e828.jpg"
+      alt="cindy"
+      title="cindy"
+      style="
+        width: 100px;
+        height: 100px;
+        margin-top: 190px;
+        margin-left: 135px;
+        border-radius: 50%;
+      "
+    />
+    <div
+      class="collapse navbar-collapse"
+      id="navbarSupportedContent"
+      style="margin-left: 258px"
+    >
+      <ul class="navbar-nav mb-9 mb-lg-0">
         <li class="nav-item"></li>
       </ul>
-
-      <ul class="navbar-nav" *ngIf="isAdmin == true">
+      <ul class="navbar-nav mb-3 mb-lg-0" *ngIf="isAdmin == true">
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -37,7 +69,7 @@
         </li>
       </ul>
 
-      <ul class="navbar-nav" *ngIf="isAuthorizated == true">
+      <ul class="navbar-nav mb-0 mb-lg-0" *ngIf="isAuthorizated == true">
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"

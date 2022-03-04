@@ -19,3 +19,77 @@ div ul > li {
   color: rgb(158, 154, 154);
   background-color: rgb(66, 66, 66);
 }
+
+p.bubble {
+  position: relative;
+  width: 100px;
+  text-align: center;
+  line-height: 1.4em;
+  margin: 40px auto;
+  background-color: rgb(158, 154, 154);
+  border: 8px solid #333;
+  border-radius: 30px;
+  font-family: sans-serif;
+  padding: 20px;
+  font-size: large;
+}
+
+p.speech {
+  height: 100px;
+  width: 300px;
+  border-radius: 200px;
+  padding: 30px;
+}
+
+p.bubble:before,
+p.bubble:after {
+  content: " ";
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+p.speech:before,
+p.speech:after {
+  left: 10px;
+  bottom: -30px;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(158, 154, 154);
+  border: 8px solid #333;
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  border-radius: 28px;
+}
+
+p.speech:after {
+  width: 20px;
+  height: 20px;
+  left: 5px;
+  bottom: -40px;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  border-radius: 18px;
+}
+p.speech:before,
+p.speech:after {
+  left: 250px;
+  bottom: -30px;
+  width: 40px;
+  height: 40px;
+  background-color: rgb(158, 154, 154);
+  border: 8px solid #333;
+  -webkit-border-radius: 28px;
+  -moz-border-radius: 28px;
+  border-radius: 28px;
+}
+
+p.speech:after {
+  width: 20px;
+  height: 20px;
+  left: 275px;
+  bottom: -40px;
+  -webkit-border-radius: 18px;
+  -moz-border-radius: 18px;
+  border-radius: 18px;
+}
