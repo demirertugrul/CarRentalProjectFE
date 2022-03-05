@@ -7,7 +7,7 @@ import { UserDetail } from 'src/app/models/userDetail';
 import { BrandService } from 'src/app/services/brand.service';
 import { ColorService } from 'src/app/services/color.service';
 import { LocalStorageService } from 'src/app/services/local-storage.service';
-
+declare var $: any;
 @Component({
   selector: 'app-navi',
   templateUrl: './navi.component.html',
@@ -16,10 +16,10 @@ import { LocalStorageService } from 'src/app/services/local-storage.service';
 export class NaviComponent implements OnInit {
   isAuthorizated = false;
   isAdmin = false;
+  marginTop = '0px';
   userDetails: UserDetail;
   brands: Brand[];
   colors: Color[];
-
   constructor(
     private brandService: BrandService,
     private colorService: ColorService,
@@ -34,6 +34,16 @@ export class NaviComponent implements OnInit {
     this.checkIsAdmin();
     this.getBrands();
     this.getColors();
+    $('.scrolldown').on('click', function () {
+      $('.container-fluid').toggle(
+        function () {
+          $('.container-fluid').css({ 'margin:top': '-1000px' });
+        },
+        function () {
+          $('.container-fluid').css({ 'margin:top': '0px' });
+        }
+      );
+    });
   }
 
   getBrands() {
