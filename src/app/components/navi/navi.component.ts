@@ -37,10 +37,10 @@ export class NaviComponent implements OnInit {
     $('.scrolldown').on('click', function () {
       $('.container-fluid').toggle(
         function () {
-          $('.container-fluid').css({ 'margin:top': '-1000px' });
+          $('.container-fluid').css({ 'margin:top': '0px' });
         },
         function () {
-          $('.container-fluid').css({ 'margin:top': '0px' });
+          $('.container-fluid').css({ 'margin:top': '-1000px' });
         }
       );
     });
